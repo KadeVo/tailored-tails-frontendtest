@@ -36,7 +36,7 @@ function SingleItem({
 
   useEffect(() => {
     axios
-      .get<ItemInterface>(`https://tailored-tails-api/items/${itemId}`)
+      .get<ItemInterface>(`https://tailored-tails-api.onrender.com/items/${itemId}`)
       .then((response) => {
         setItem(response.data)
       })

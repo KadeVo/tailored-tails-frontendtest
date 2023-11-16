@@ -19,7 +19,7 @@ export const productsFetch = createAsyncThunk<Item[], void>(
   'products/productsFetch',
   async () => {
     try {
-      const response = await axios.get<Item[]>('https://tailored-tails-api/items');
+      const response = await axios.get<Item[]>('https://tailored-tails-api.onrender.com/items');
       return response?.data;
     } catch (error) {
       console.log(error);

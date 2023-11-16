@@ -45,7 +45,7 @@ export const registerUser = createAsyncThunk<string, Values>(
   'auth/registerUser',
   async (values, { rejectWithValue }) => {
     try {
-      const token = await axios.post<string>('https://tailored-tails-api/register', {
+      const token = await axios.post<string>('https://tailored-tails-api.onrender.com/register', {
         name: values.name,
         email: values.email,
         password: values.password,
@@ -63,7 +63,7 @@ export const loginUser = createAsyncThunk<string, Values>(
   'auth/loginUser',
   async (values, { rejectWithValue }) => {
     try {
-      const token = await axios.post<string>('https://tailored-tails-api/login', {
+      const token = await axios.post<string>('https://tailored-tails-api.onrender.com/login', {
         email: values.email,
         password: values.password,
       })

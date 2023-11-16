@@ -14,8 +14,6 @@ interface Cart {
 }
 
 const initialState: Cart = {
-  // the line below will include the localStorage cartItems to the application state.
-  // cartItems inside getItem is the key from localStorage.setItem('cartItems') below
   cartItems: localStorage.getItem('cartItems')
     ? JSON.parse(localStorage.getItem('cartItems'))
     : [],
