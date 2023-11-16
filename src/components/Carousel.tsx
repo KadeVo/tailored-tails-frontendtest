@@ -9,7 +9,7 @@ const Carousel: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get<ItemInterface[]>('http://localhost:3000/items')
+      .get<ItemInterface[]>('https://tailored-tails-api/items')
       .then((response) => {
         setImages(response.data)
         setVisibleImages(response.data.slice(0, 4))

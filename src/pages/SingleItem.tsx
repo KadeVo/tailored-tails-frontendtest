@@ -36,7 +36,7 @@ function SingleItem({
 
   useEffect(() => {
     axios
-      .get<ItemInterface>(`http://localhost:3000/items/${itemId}`)
+      .get<ItemInterface>(`https://tailored-tails-api/items/${itemId}`)
       .then((response) => {
         setItem(response.data)
       })
