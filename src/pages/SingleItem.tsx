@@ -33,10 +33,12 @@ function SingleItem({
   const { itemId } = useParams()
   const [item, setItem] = useState<ItemInterface | null>(null)
 
-
   useEffect(() => {
     axios
-      .get<ItemInterface>(`https://tailored-tails-api.onrender.com/items/${itemId}`)
+      .get<ItemInterface>(
+        `https://tailored-tails-api-05jq.onrender.com
+      /items/${itemId}`
+      )
       .then((response) => {
         setItem(response.data)
       })
@@ -66,7 +68,8 @@ function SingleItem({
             }}
           >
             <p className="text-bold text-lg">Hover image to magnify</p>
-            <img className='w-[500px] rounded-md'
+            <img
+              className="w-[500px] rounded-md"
               src={item.imageUrl}
               style={{ height: height, width: width }}
               onMouseEnter={(e) => {
