@@ -6,7 +6,7 @@ const CheckoutButton = ({ cartItems }) => {
   const user = useSelector((state: RootState) => state.auth)
   const handleCheckout = () => {
     axios
-      .post('https://tailored-tails-api/stripe/create-checkout-session', {
+      .post('https://tailored-tails-api.onrender.com/stripe/create-checkout-session', {
         cartItems,
         userId: user._id,
       })
