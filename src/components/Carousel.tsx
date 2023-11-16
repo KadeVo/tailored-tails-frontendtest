@@ -9,7 +9,9 @@ const Carousel: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get<ItemInterface[]>('https://tailored-tails-api.onrender.com/items')
+      .get<ItemInterface[]>(
+        'https://tailored-tails-api-05jq.onrender.com/items'
+      )
       .then((response) => {
         setImages(response.data)
         setVisibleImages(response.data.slice(0, 4))

@@ -14,7 +14,7 @@ interface User {
   email: string
 }
 export interface RootState {
-  auth: initialStateModel;
+  auth: initialStateModel
 }
 
 interface initialStateModel {
@@ -45,11 +45,14 @@ export const registerUser = createAsyncThunk<string, Values>(
   'auth/registerUser',
   async (values, { rejectWithValue }) => {
     try {
-      const token = await axios.post<string>('https://tailored-tails-api.onrender.com/register', {
-        name: values.name,
-        email: values.email,
-        password: values.password,
-      })
+      const token = await axios.post<string>(
+        'https://tailored-tails-api-05jq.onrender.com/register',
+        {
+          name: values.name,
+          email: values.email,
+          password: values.password,
+        }
+      )
       localStorage.setItem('token', token.data)
       return token.data
     } catch (err) {
@@ -63,10 +66,13 @@ export const loginUser = createAsyncThunk<string, Values>(
   'auth/loginUser',
   async (values, { rejectWithValue }) => {
     try {
-      const token = await axios.post<string>('https://tailored-tails-api.onrender.com/login', {
-        email: values.email,
-        password: values.password,
-      })
+      const token = await axios.post<string>(
+        'https://tailored-tails-api-05jq.onrender.com/login',
+        {
+          email: values.email,
+          password: values.password,
+        }
+      )
       localStorage.setItem('token', token.data)
       return token.data
     } catch (err) {

@@ -1,4 +1,4 @@
-export const url = 'https://tailored-tails-api.onrender.com'
+export const url = 'https://tailored-tails-api-05jq.onrender.com'
 
 export const setHeaders = () => {
   const headers = {
